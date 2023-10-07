@@ -1,0 +1,19 @@
+{
+  "budgets": [
+    {
+      "id": 1,
+      "category": "Alimentação",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "category": "Transporte",
+      "price": 100
+    },
+    {
+      "id": 3,
+      "category": "abcde",
+      "price": "123"
+    }
+  ]
+}
