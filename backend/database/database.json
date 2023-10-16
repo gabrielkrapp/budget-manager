@@ -9,11 +9,20 @@
       "id": 2,
       "category": "Transporte",
       "price": 100
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "abcde",
+      "email": "abcde",
+      "password": "123456"
     },
     {
-      "id": 3,
-      "category": "abcde",
-      "price": "123"
+      "id": 2,
+      "name": "Gabriel Oliveira",
+      "email": "gabriel.krapp@hotmail.com",
+      "password": "123456"
     }
   ]
 }
