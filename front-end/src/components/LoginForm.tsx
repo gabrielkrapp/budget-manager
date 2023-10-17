@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { loginUser } from '../api/Login';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const LoginForm = () => {
     });
 
     const [serverError, setServerError] = useState('');
+
+    const navigate = useNavigate()
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -18,9 +21,10 @@ const LoginForm = () => {
         e.preventDefault();
         try {
             const response = await loginUser(formData);
+            navigate('/');
             console.log(response);
         } catch (error) {
-            setServerError('Failed to login. Please try again later.');
+            setServerError('Failed to login.');
         }
     };
 

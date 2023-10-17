@@ -18,14 +18,17 @@ interface ModalProps {
   handleClose: () => void;
   handleSave: () => void;
   open: boolean;
-  category: string;
-  setCategory: (value: string) => void;
+  transactionType: 'Income' | 'Expense';
+  setTransactionType: (value: 'Income' | 'Expense') => void;
   price: number;
   setPrice: (value: number) => void;
+  setDescription: (value: string) => void;
+  description: string;
 }
 
-export const BasicModal: React.FC<ModalProps> = ({ open, handleClose, handleSave, category, setCategory, price, setPrice }) => {
-
+export const BasicModal: React.FC<ModalProps> = ({ 
+    open, handleClose, handleSave, transactionType, setTransactionType, price, setPrice, description, setDescription 
+}) => {
   return (
     <div>
       <Modal
@@ -36,16 +39,18 @@ export const BasicModal: React.FC<ModalProps> = ({ open, handleClose, handleSave
       >
         <Box sx={style}>
             <div className="mb-4">
-                <label className="block text-sm font-bold mb-2" htmlFor="category">
-                    Category
+                <label className="block text-sm font-bold mb-2" htmlFor="transactionType">
+                    Transaction Type
                 </label>
-                <input
-                    type="text"
-                    id="category"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
+                <select 
+                    id="transactionType"
+                    value={transactionType}
+                    onChange={(e) => setTransactionType(e.target.value as 'Income' | 'Expense')}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
+                >
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
             </div>
             <div className="mb-4">
                 <label className="block text-sm font-bold mb-2" htmlFor="price">
@@ -59,12 +64,25 @@ export const BasicModal: React.FC<ModalProps> = ({ open, handleClose, handleSave
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
             </div>
-            <button onClick={() => {
-                handleSave()
-                handleClose()
-                }
-                } 
-                type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <div className="mb-4">
+                <label className="block text-sm font-bold mb-2" htmlFor="description">
+                    Description
+                </label>
+                <input
+                    type="text"
+                    id="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+            </div>
+            <button 
+                onClick={() => {
+                    handleSave();
+                    handleClose();
+                }}
+                type="submit" 
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Add
             </button>
         </Box>

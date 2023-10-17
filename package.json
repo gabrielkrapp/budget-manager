@@ -7,5 +7,4 @@
     "start-backend": "cd backend && npm run dev",
     "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\""
   }
-  
 }

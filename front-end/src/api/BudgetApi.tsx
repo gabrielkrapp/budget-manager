@@ -2,9 +2,9 @@ import axios from 'axios';
 import { BASE_URL } from '../App';
 
 
-export const fetchBudgetItems = async () => {
+export const fetchBudgetItems = async (userId: any) => {
     try {
-        const response = await axios.get(`${BASE_URL}/rows`);
+        const response = await axios.get(`${BASE_URL}/rows?userid=${userId}`)
         return response.data;
     } catch (error) {
         console.error("There was an error fetching the rows", error);
