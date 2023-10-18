@@ -1,27 +1,27 @@
 ## My Budget App: Personal Finance Management Made Easy
 
-![App Logo](budgetmanager.png)
+![App Logo](./assets/budgetmanager.png)
 
 **My Budget App** offers a streamlined experience for users to manage their financial status. Powered by an array of modern technologies and libraries, this application provides an intuitive user interface for monitoring income and expenses.
 
 ### Screenshots
 
-![LOGIN PAGE](image.png)
+![LOGIN PAGE](./assets/image.png)
 *Login Page*
 
-![REGISTER PAGE](image-1.png)
+![REGISTER PAGE](./assets/image-1.png)
 *Register Page*
 
-![Dashboard](image-2.png)
+![Dashboard](./assets/image-2.png)
 *Dashboard View with Incomes, Expenses, and Balance*
 
-![Budget Table Adding](image-3.png)
+![Budget Table Adding](./assets/image-3.png)
 *Detailed Budget Table with Adding Capabilities*
 
-![Budget Table Editing](image-4.png)
+![Budget Table Editing](./assets/image-4.png)
 *Detailed Budget Table with Editing Capabilities*
 
-![Grafic](image-5.png)
+![Grafic](./assets/image-5.png)
 *Detailed Grafic*
 
 ### Tech Stack
