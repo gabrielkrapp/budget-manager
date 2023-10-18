@@ -8,7 +8,7 @@ const path_1 = __importDefault(require("path"));
 class ConfigRoutes {
     constructor() {
         this.router = (0, express_1.Router)();
-        this.dataPath = path_1.default.join(__dirname, '..', '..', 'database', 'database.json');
+        this.dataPath = path_1.default.join(__dirname, "..", "..", "database", "database.json");
     }
 }
 exports.default = ConfigRoutes;

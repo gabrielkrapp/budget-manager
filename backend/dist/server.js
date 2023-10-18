@@ -18,7 +18,7 @@ app.use(body_parser_1.default.json());
 app.use(BudgetRoutes_1.default);
 app.use(RegisterRouter_1.default);
 app.use(LoginRouter_1.default);
-exports.SECRET_KEY = crypto_1.default.randomBytes(32).toString('hex');
+exports.SECRET_KEY = crypto_1.default.randomBytes(32).toString("hex");
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -2,7 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface GuestRouteProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 export const GuestRoute: React.FC<GuestRouteProps> = ({ children }) => {

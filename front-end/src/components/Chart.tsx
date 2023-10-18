@@ -1,5 +1,13 @@
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts';
+import React from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  CartesianGrid,
+} from "recharts";
 
 type TransactionType = "Income" | "Expense";
 
@@ -15,22 +23,21 @@ interface Props {
 }
 
 const IncomeVsExpensesChart: React.FC<Props> = ({ budgetItems }) => {
-
   const roundToTwoDecimals = (value: any) => {
     return Math.round(parseFloat(value) * 100) / 100; // Arredonda para duas casas decimais
   };
-  
+
   const totalIncome = budgetItems
-    .filter(item => item.category === 'Income')
+    .filter((item) => item.category === "Income")
     .reduce((acc, item) => acc + roundToTwoDecimals(item.price), 0);
-  
+
   const totalExpenses = budgetItems
-    .filter(item => item.category === 'Expense')
+    .filter((item) => item.category === "Expense")
     .reduce((acc, item) => acc + roundToTwoDecimals(item.price), 0);
-  
+
   const chartData = [
-    { name: 'Income', value: totalIncome.toString() },
-    { name: 'Expenses', value: totalExpenses.toString() }
+    { name: "Income", value: totalIncome.toString() },
+    { name: "Expenses", value: totalExpenses.toString() },
   ];
 
   return (
@@ -43,6 +50,6 @@ const IncomeVsExpensesChart: React.FC<Props> = ({ budgetItems }) => {
       <Bar dataKey="value" barSize={20} fill="#413ea0" />
     </BarChart>
   );
-}
+};
 
 export default IncomeVsExpensesChart;
